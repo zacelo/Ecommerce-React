@@ -1,5 +1,3 @@
-import "./card.css"
-
 export const Card = ({product}) => {
    const {title,image,descripcion,precio} = product 
    
@@ -9,7 +7,8 @@ export const Card = ({product}) => {
    
     return (
         <>
-            <div className="card" >
+            <div className="card " >
+                <div className=" popo" >
                 <img src={image} className="card-img-top" alt="..."></img>
                     <div className="card-body">                       
                         <h4 className="card-title">{title}</h4>
@@ -17,6 +16,8 @@ export const Card = ({product}) => {
                         <p className="card-text">{descripcion}</p>
                         <button className="btn btn-primary" onClick={()=>anadir(product)}>Añadir al Carrito</button>
                     </div>
+                </div>
+                
             </div>
         </>
 
