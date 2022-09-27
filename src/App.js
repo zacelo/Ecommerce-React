@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { MenuNavegacion } from "./components/navBar/MenuNavegacion.jsx";
+import { Card } from "./components/card/card"
+import { products } from "./Db/db"
 
-function App() {
+
+
+
+
+export function App() { 
+ 
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container mt-2">
+        <MenuNavegacion />
+        <hr></hr>
+        <div className="row">
+          {
+            products.map((item) =>
+              <div className="col-3" key={item.id}>
+                <Card product={item} />
+              </div>
+            )
+          }
+
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+
