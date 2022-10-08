@@ -1,6 +1,6 @@
 import { CartModal } from "./cartModal"
 
-export const Cart = () => {
+export const CartWidget = () => {
     return (
         <>
             <button

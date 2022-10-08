@@ -1,4 +1,4 @@
-export const Card = ({product}) => {
+export const ItemListContainer = ({product}) => {
    const {title,image,descripcion,precio} = product 
    
     const anadir = (product )=> {
@@ -7,8 +7,9 @@ export const Card = ({product}) => {
    
     return (
         <>
+       
             <div className="card " >
-                <div className=" popo" >
+                <div >
                 <img src={image} className="card-img-top" alt="..."></img>
                     <div className="card-body">                       
                         <h4 className="card-title">{title}</h4>
