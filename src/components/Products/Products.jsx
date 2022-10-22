@@ -4,25 +4,26 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../../utils/firebase/firebase'
 
-export const Products =  () => {
+export const Products = () => {
 
     const [productos, setProductos] = useState([])
 
     useEffect(() => {
-        const getProducts = async () => {
-            const refProducts = collection(db, "productos")
-            const response = await getDocs(refProducts);
-            const documents = response.docs          
-            const result = documents.map(item => {
-                return ({
-                    ...item.data(),
-                    id:item.id
-                })
-            })
-            setProductos(result)                           
-        }
         getProducts()
     }, [])
+
+    const getProducts = async () => {
+        const refProducts = collection(db, "productos")
+        const response = await getDocs(refProducts);
+        const documents = response.docs
+        const result = documents.map(item => {
+            return ({
+                ...item.data(),
+                id: item.id
+            })
+        })
+        setProductos(result)
+    }
 
     return (
         <>
