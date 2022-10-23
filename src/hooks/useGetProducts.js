@@ -7,13 +7,17 @@ import { db } from '../utils/firebase/firebase'
 
 export const useGetProducts = () => {
 
-   const [state, setState] = useState([])
+    const [ products,  setProducts ] = useState([])
+    const [ isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         getProducts()
     }, [])
 
-    const getProducts = async () => {
+    const getProducts = async () => { 
+
+        setIsLoading(true)      
+       
         const refProducts = collection(db, "productos")
         const response = await getDocs(refProducts);
         const documents = response.docs
@@ -23,8 +27,17 @@ export const useGetProducts = () => {
                 id: item.id
             })
         })
-       setState(result)
+        setProducts(result)
+
+        setTimeout(() => {
+            setIsLoading(false)
+        },4000)
+        
     }
-    return  state
     
+    return {
+        products,
+        isLoading
+    }
+
 }
