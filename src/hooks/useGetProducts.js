@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 //firebase
@@ -5,18 +6,18 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from '../utils/firebase/firebase'
 //--------
 
-export const useGetProducts = () => {
+export const useGetProducts = () => {   
 
-    const [ products,  setProducts ] = useState([])
-    const [ isLoading, setIsLoading] = useState(true)
-
+    const [estado, setEstado] = useState({
+        data:[],
+        loading:true
+    })
+    
     useEffect(() => {
-        getProducts()
+        getProducts()       
     }, [])
 
-    const getProducts = async () => { 
-
-        setIsLoading(true)      
+    const getProducts = async () => {         
        
         const refProducts = collection(db, "productos")
         const response = await getDocs(refProducts);
@@ -26,18 +27,18 @@ export const useGetProducts = () => {
                 ...item.data(),
                 id: item.id
             })
-        })
-        setProducts(result)
-
-        setTimeout(() => {
-            setIsLoading(false)
-        },4000)
+        })       
         
+        setTimeout(() => {
+            setEstado({
+                products:result,
+                loading:false
+            })
+        }, 1000);
+       
     }
     
-    return {
-        products,
-        isLoading
-    }
-
+    const data = {...estado}
+   
+    return data    
 }

@@ -3,15 +3,16 @@ import { useGetProducts } from "../../hooks/useGetProducts";
 import { IsLoading } from '../isLoading/IsLoading'
 
 export const Products = () => {
-    const { products, isLoading } = useGetProducts()
-       
+
+    const { products, loading } = useGetProducts();
+
     return (
         <>
             <div className="row">
                 {
-                    isLoading
+                    loading
                         ?
-                       <IsLoading/>
+                        <IsLoading />
                         :
                         products.map((item) =>
                             <div className="col-3" key={item.id}>
