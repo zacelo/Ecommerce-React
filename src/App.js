@@ -5,6 +5,7 @@ import { ProductsPage } from './Pages/ProductsPage'
 import { HomePage } from './Pages/HomePage'
 import { CategoriesPage } from './Pages/CategoriesPage'
 import { DetailProduct }  from "./Pages/DetailProductPage"
+import { CartPage } from './Pages/CartPage'
 import "./App.css"
 
 
@@ -20,7 +21,8 @@ export function App() {
           <hr></hr>
           <Routes>            
             <Route path="/" element={<HomePage />} />
-            <Route path="products" element={<ProductsPage />} />            
+            <Route path="products" element={<ProductsPage />} />
+            <Route path="carrito" element={<CartPage />} />            
             <Route path="nosotros" element={<ContactPage />} />
             <Route path="categoria/:categoria" element={<CategoriesPage/>}/>
             <Route path="detalle/:id" element={<DetailProduct/>}/>

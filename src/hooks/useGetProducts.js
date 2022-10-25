@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 //firebase
@@ -9,12 +8,12 @@ import { db } from '../utils/firebase/firebase'
 export const useGetProducts = () => {   
 
     const [estado, setEstado] = useState({
-        data:[],
+        products:[],
         loading:true
     })
     
     useEffect(() => {
-        getProducts()       
+        getProducts()         
     }, [])
 
     const getProducts = async () => {         
@@ -34,7 +33,7 @@ export const useGetProducts = () => {
                 products:result,
                 loading:false
             })
-        }, 1000);
+        }, 800);
        
     }
     
