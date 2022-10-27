@@ -7,6 +7,7 @@ import { CategoriesPage } from './Pages/CategoriesPage'
 import { DetailProduct }  from "./Pages/DetailProductPage"
 import { CartPage } from './Pages/CartPage'
 import "./App.css"
+import { CartProvider } from "./context/CartProvider.js";
 
 
 
@@ -15,6 +16,7 @@ export function App() {
 
   return (
     <>
+    <CartProvider>
       <div className="App">
         <div className="container mt-2">
           <NavBar />
@@ -30,6 +32,7 @@ export function App() {
           </Routes>
         </div>
       </div>
+      </CartProvider>
     </>
 
   );

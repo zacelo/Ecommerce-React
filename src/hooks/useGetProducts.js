@@ -26,14 +26,13 @@ export const useGetProducts = () => {
                 ...item.data(),
                 id: item.id
             })
-        })       
-        
-        setTimeout(() => {
+        })      
+   
             setEstado({
                 products:result,
                 loading:false
             })
-        }, 800);
+      
        
     }
     

@@ -33,12 +33,12 @@ export const useGetCategoty = (category) => {
             })
        })        
         
-       setTimeout(() => {
+  
         setEstado({
             products:resultado,
             loading:false
         })
-       }, 800);
+     
         
    
       

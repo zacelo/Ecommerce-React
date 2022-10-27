@@ -1,14 +1,20 @@
 import { Count } from '../Count/Count'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../context/CartContex'
+
+
 
 export const Details = ({ product }) => {
-
-    const addCart = ( p)=>{
-        console.log(p)
-
+   
+    const {agregarProductoCarrito} = useContext(CartContext)
+    const [cant, setCant] = useState(1)    
+    
+    const cantidad = ( count )=>{
+        setCant( count )
     }
 
     return (
-        <>
+        <>      
             <div className="row">
                 <div className="col-6">
                     <div className="card">
@@ -43,9 +49,9 @@ export const Details = ({ product }) => {
                             <h5 className="card-title h4 bg-dark text-white p-2 rounded">
                                 Cantidad
                             </h5>
-                            <Count />
+                            <Count onCant={(valor) => cantidad(valor)} valorInicial={1}/>
                             <hr></hr>
-                            <button className="btn btn-primary py-0 mt-2" onClick={()=>addCart(product)}>
+                            <button className="btn btn-primary py-0 mt-2" onClick={()=>agregarProductoCarrito(product,cant)}>
                                 <i className="bi bi-cart-check-fill fs-3"></i>
                                 <span className="fs-3 ms-2"> + </span>
                             </button>
