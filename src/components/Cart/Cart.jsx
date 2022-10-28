@@ -4,9 +4,12 @@ import { CartContext } from "../../context/CartContex";
 export const Cart = () => {
 
     const { cartProducts } = useContext(CartContext);
-    console.log(cartProducts)
-
-
+  
+   const total = cartProducts.reduce((acumulador, item)=>{
+    
+    return  acumulador +  item.precio * item.cantidad
+  },0)    
+  
     return (
         <>
 
@@ -35,6 +38,7 @@ export const Cart = () => {
                     }
                 </tbody>
             </table>
+            <h2>Total {total}</h2>
         </>
     )
 }
