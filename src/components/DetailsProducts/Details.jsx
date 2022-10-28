@@ -1,12 +1,13 @@
 import { Count } from '../Count/Count'
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContex'
+import { Link } from "react-router-dom";
 
 
 
 export const Details = ({ product }) => {
    
-    const {agregarProductoCarrito} = useContext(CartContext)
+    const {addProductCart} = useContext(CartContext)
     const [cant, setCant] = useState(1)    
     
     const cantidad = ( count )=>{
@@ -51,10 +52,12 @@ export const Details = ({ product }) => {
                             </h5>
                             <Count onCant={(valor) => cantidad(valor)} valorInicial={1}/>
                             <hr></hr>
-                            <button className="btn btn-primary py-0 mt-2" onClick={()=>agregarProductoCarrito(product,cant)}>
+                            <Link to="products">
+                            <button className="btn btn-primary py-0 mt-2" onClick={()=>addProductCart(product,cant)}>
                                 <i className="bi bi-cart-check-fill fs-3"></i>
                                 <span className="fs-3 ms-2"> + </span>
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

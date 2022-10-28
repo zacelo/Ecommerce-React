@@ -18,12 +18,11 @@ export const CartProvider = ({children}) => {
     }
    
     
-    const agregarProductoCarrito = (producto, cantidad)=>{
+    const addProductCart = (producto, cantidad)=>{
       const cartProductsCopy =  [...cartProducts]
-      if(existe(producto.id)){
-
-        console.log(producto.id)
-       const indexProduct = cartProductsCopy.findIndex((item) => item.id === producto.id)
+      if(existe(producto.id)){       
+        const cartProductsCopy =  [...cartProducts]
+        const indexProduct = cartProductsCopy.findIndex((item) => item.cantidad === cantidad)
        cartProductsCopy[indexProduct].cantidad += cantidad
        setCartProducts(cartProductsCopy)
        localStorage.setItem("carrito", JSON.stringify(cartProductsCopy));
@@ -40,8 +39,32 @@ export const CartProvider = ({children}) => {
       }    
     }
 
+    const deleteProductCart = (id)=>{
+      const cartProductsCopy =  [...cartProducts]
+      const indexProduct = cartProductsCopy.findIndex((item) => item.id === id)
+      cartProductsCopy.splice( indexProduct, 1 );
+      setCartProducts(cartProductsCopy)
+      localStorage.setItem("carrito", JSON.stringify(cartProductsCopy));
+    }
+
+    const addQuantity = (id)=>{
+      const cartProductsCopy =  [...cartProducts]
+      const indexProduct = cartProductsCopy.findIndex((item) => item.id === id)
+      cartProductsCopy[indexProduct].cantidad += 1
+      setCartProducts(cartProductsCopy)
+      localStorage.setItem("carrito", JSON.stringify(cartProductsCopy));
+    }
+
+    const subtractQuantity = (id)=>{
+      const cartProductsCopy =  [...cartProducts]
+      const indexProduct = cartProductsCopy.findIndex((item) => item.id === id)
+      cartProductsCopy[indexProduct].cantidad -= 1
+      setCartProducts(cartProductsCopy)
+      localStorage.setItem("carrito", JSON.stringify(cartProductsCopy));
+    }
+
   return (
-    <CartContext.Provider value={{cartProducts,agregarProductoCarrito}}>
+    <CartContext.Provider value={{cartProducts,addProductCart,deleteProductCart,addQuantity,subtractQuantity}}>
         {children}
     </CartContext.Provider>
   )
