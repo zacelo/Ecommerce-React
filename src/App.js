@@ -17,7 +17,7 @@ export function App() {
   return (
     <>
     <CartProvider>
-      <div className="App">
+      <div className="App">     
         <div className="container mt-2">
           <NavBar />
           <hr></hr>

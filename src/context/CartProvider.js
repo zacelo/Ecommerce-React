@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { CartContext } from "./CartContex"
-import { useAlert } from "../hooks/useAlert";
-import { useLocal } from "../hooks/useLocal";
 
+import { useLocal } from "../hooks/useLocal";
+import { useAlert } from "../hooks/useAlert"
 
 
 export const CartProvider = ({ children }) => {
 
-  const {alertAddProduct}= useAlert()
+  const {alertAddProduct} =useAlert()
   const {localstorage, addLocal}=useLocal() 
 
   const [cartProducts, setCartProducts] = useState(localstorage);
