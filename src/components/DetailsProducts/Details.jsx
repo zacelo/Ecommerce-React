@@ -11,9 +11,10 @@ export const Details = ({ product }) => {
     const [cant, setCant] = useState(1)    
     
     const cantidad = ( count )=>{
+        
         setCant( count )
     }
-
+    
     return (
         <>      
             <div className="row">

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CartContex";
 
 export const Cart = () => {
@@ -7,13 +7,10 @@ export const Cart = () => {
   
    const total = cartProducts.reduce((acumulador, item)=>{    
     return  acumulador +  item.precio * item.cantidad
-  },0)    
-  
- 
+  },0)     
  
     return (
         <>
-
             <table className="table">
                 <thead>
                     <tr>
@@ -26,7 +23,6 @@ export const Cart = () => {
                     </tr>
                 </thead>
                 <tbody>
-
                     {
                         cartProducts.map(item =>
                             <tr key={item.id}>
