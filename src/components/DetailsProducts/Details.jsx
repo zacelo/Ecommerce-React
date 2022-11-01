@@ -6,17 +6,22 @@ import { Link } from "react-router-dom";
 
 
 export const Details = ({ product }) => {
-   
-    const {addProductCart} = useContext(CartContext)
-    const [cant, setCant] = useState(1)    
-    
-    const cantidad = ( count )=>{
-        
-        setCant( count )
+
+    const { addProductCart } = useContext(CartContext)
+    const [cant, setCant] = useState(1)
+    const [checkout, setCheckout] = useState(false);
+
+
+    const cantidad = (count) => {
+        setCant(count)
     }
-    
+
+    const buttonVisible = ()=>{
+        setCheckout(true)
+    }
+
     return (
-        <>      
+        <>
             <div className="row">
                 <div className="col-6">
                     <div className="card">
@@ -51,14 +56,25 @@ export const Details = ({ product }) => {
                             <h5 className="card-title h4 bg-dark text-white p-2 rounded">
                                 Cantidad
                             </h5>
-                            <Count onCant={(valor) => cantidad(valor)} valorInicial={1}/>
+                            <Count onCant={(valor) => cantidad(valor)} valorInicial={1} />
                             <hr></hr>
-                            <Link to="products">
-                            <button className="btn btn-primary py-0 mt-2" onClick={()=>addProductCart(product,cant)}>
-                                <i className="bi bi-cart-check-fill fs-3"></i>
-                                <span className="fs-3 ms-2"> + </span>
+                            <button className="btn btn-success py-0 mt-2 me-2" onClick={() => addProductCart(product, cant)}>
+                                <span className="fs-4  " onClick={buttonVisible}>Agregar al carrito </span>
                             </button>
+                            <Link to="products ">
+                                <button className="btn btn-primary py-0 mt-2" >
+                                    <span className="fs-4 ">Seguir comprando</span>
+                                </button>
                             </Link>
+                            <br></br> <br></br>
+                            {
+                                checkout &&
+                                <Link to="/carrito">
+                                    <button className="btn btn-danger py-0 mt-2" >
+                                        <span className="fs-4 ">Finalizar compra</span>
+                                    </button>
+                                </Link>
+                            }
                         </div>
                     </div>
                 </div>
