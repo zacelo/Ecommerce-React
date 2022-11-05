@@ -1,0 +1,22 @@
+.hero-header {
+
+  height: 80vh;
+    background: linear-gradient(rgba(181, 195, 231, 0.493), rgba(231, 151, 114, 0.425)), url(https://wwwhatsnew.com/wp-content/uploads/2019/09/5-apps-en-espa%C3%B1ol-que-debe-tener-todo-due%C3%B1o-de-mascotas.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  
+  .h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+  }
+  
+  .hero-header .img {
+    animation: imgRotate 5s linear infinite;
+  }
+  
+  @keyframes imgRotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }

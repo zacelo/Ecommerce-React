@@ -1,0 +1,24 @@
+.h1About {
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    color: rgb(226, 38, 38);
+}
+
+.btnAbout{
+  
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    color: aliceblue;
+
+}
+
+.pAbout {
+    font-size: 20px
+}
+
+.section-title {
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    color: rgb(226, 38, 38);
+    font-size: 37px
+}

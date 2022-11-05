@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
       setCartProducts(cartProductsCopy)
 
       addLocal(cartProductsCopy)
-      alertAddProduct('Agregado con exito ')
+      alertAddProduct('Producto agregado con exito ')
 
     } else {
       const productoMasCantidad = {
@@ -63,13 +63,18 @@ export const CartProvider = ({ children }) => {
   const subtractQuantity = (id) => {
     const cartProductsCopy = [...cartProducts]
     const indexProduct = cartProductsCopy.findIndex((item) => item.id === id)
+   if( cartProductsCopy[indexProduct].cantidad > 1){
     cartProductsCopy[indexProduct].cantidad -= 1
     setCartProducts(cartProductsCopy)
     addLocal(cartProductsCopy)
+   }   
   }
-
+   const resetCart = ( )=>{
+    setCartProducts([])
+    addLocal([])
+   }
   return (
-    <CartContext.Provider value={{ cartProducts, addProductCart, deleteProductCart, addQuantity, subtractQuantity }}>
+    <CartContext.Provider value={{ cartProducts, addProductCart, deleteProductCart, addQuantity, subtractQuantity,resetCart }}>
       {children}
     </CartContext.Provider>
   )

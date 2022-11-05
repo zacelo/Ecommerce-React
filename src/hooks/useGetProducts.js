@@ -21,7 +21,9 @@ export const useGetProducts = () => {
         const refProducts = collection(db, "productos")
         const response = await getDocs(refProducts);
         const documents = response.docs
+      
         const result = documents.map(item => {
+           
             return ({
                 ...item.data(),
                 id: item.id

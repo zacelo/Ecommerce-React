@@ -1,7 +1,9 @@
+import { About } from "../components/About/About"
+
 export const ContactPage = () => {
   return (
     <>
-     <h1>Nosotros</h1>
+     <About/>
     </>
   )
 }

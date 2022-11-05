@@ -2,7 +2,10 @@
 export const EmptyCart = () => {
   return (
     <>
-        <h1>Carrito Vacío</h1>    
+       <div className="text-center mt-5">
+       <img src="https://www.tiendadigital.mx/images/iconos/no-cart.png"  alt=""/>
+        </div> 
+         
     </>
   )
 }

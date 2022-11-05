@@ -16,8 +16,11 @@ export const Categories = () => {
     return (
         <>
             <div className="row">
-                <h1 className="ms-4">{categoria.toUpperCase()}</h1>
-                <hr></hr>
+                <div>
+                <h1 className="text-center bg-warning py-1 mb-3">Categoría {categoria}</h1>
+                
+                </div>
+            
                 {
                     loading 
                     ?
