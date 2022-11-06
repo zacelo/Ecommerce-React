@@ -25,7 +25,7 @@ export const Categories = () => {
                     <IsLoading/>
                     :
                     products.map((item) => 
-                        <div className="col-3" key={item.id}>
+                        <div className="col-md-6 col-lg-3" key={item.id}>
                             <ItemListContainer product={item} />
                         </div>
                     )
