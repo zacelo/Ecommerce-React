@@ -41,7 +41,7 @@ export const FormCart = ({onSendOrder}) => {
 
     return (
         <> 
-        <div className="col-4 border ps-3">
+        <div className="col-lg-4 border ps-3">
                                 <h3 className="bg-dark text-white py-1 text-center">Formulario de compra</h3>
             <form 
                 className="ms-4" 

@@ -5,7 +5,7 @@ export const TableCart = ({values}) => {
     const {cartProducts, deleteProductCart, addQuantity, subtractQuantity,total}=values
   
   return (
-    <div className='col-8 border p-0'>
+    <div className='col-lg-8 border p-0'>
     <table className="table ">
         <thead className="bg-dark text-white">
             <tr className="text-center ">
