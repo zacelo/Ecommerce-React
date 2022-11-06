@@ -11,7 +11,7 @@ export const ItemListContainer = ({ product }) => {
     return (
         <>
 
-            <div className="card  " >
+            <div className="card " >
                 <div >
                     <img src={image} className="card-img-top imagesList" alt="..."></img>
                     <div className="card-body">

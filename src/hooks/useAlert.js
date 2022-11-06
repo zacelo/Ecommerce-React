@@ -13,10 +13,11 @@ export const useAlert = () => {
     
  }
 
- const alertOrder = ( mje )=>{
+ const alertOrder = ( id )=>{
   Swal.fire({
-    icon: 'success',
-    title: mje,
+    icon: 'success',   
+    title: 'Compra realizada con exito',
+    html:`<h5>Identificador: ${id}</h5>`,
     showConfirmButton: true,
     confirmButtonColor: 'rgb(226, 38, 38)',    
   }).then(()=>{

@@ -15,12 +15,10 @@ export const Categories = () => {
     
     return (
         <>
-            <div className="row">
+            <div className="row p-3">
                 <div>
-                <h1 className="text-center bg-warning py-1 mb-3">Categoría {categoria}</h1>
-                
-                </div>
-            
+                <h1 className="text-center bg-warning py-1 mb-3 titles rounded-pill">Categoría {categoria}</h1>                
+                </div>            
                 {
                     loading 
                     ?

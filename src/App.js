@@ -8,7 +8,7 @@ import { DetailProduct }  from "./Pages/DetailProductPage"
 import { CartPage } from './Pages/CartPage'
 import "./App.css"
 import { CartProvider } from "./context/CartProvider.js";
-
+import { Footer } from "./components/Footer/Footer"
 
 
 export function App() {
@@ -21,7 +21,8 @@ export function App() {
         <div className="container mt-2">
           <NavBar />
           <hr></hr>
-          <Routes>            
+          <div className="rutas">
+          <Routes >            
             <Route path="/" element={<HomePage />} />
             <Route path="products" element={<ProductsPage />} />
             <Route path="carrito" element={<CartPage />} />            
@@ -30,6 +31,8 @@ export function App() {
             <Route path="detalle/:id" element={<DetailProduct/>}/>
             <Route path="/*" element={<Navigate to="products" />} />            
           </Routes>
+          </div>
+          <Footer/>
         </div>
       </div>
       </CartProvider>
