@@ -6,8 +6,8 @@
 <br>
 
 ## Imagenes:
-![](https://github.com/zacelo/PreEnterga2-Long/raw/main/src/assets/captura1.png)
-![](https://github.com/zacelo/PreEnterga2-Long/raw/main/src/assets/captura2.png)
+![](https://github.com/zacelo/Ecommerce-React/raw/main/src/assets/captura1.png)
+![](https://github.com/zacelo/Ecommerce-React/raw/main/src/assets/captura2.png)
 
 
 ## [Ir a la pagina](https://mundo-mascotas.netlify.app/ "Ir a la pagina")
